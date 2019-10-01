@@ -51,7 +51,7 @@ public class EmpDAO {
 		
 		return empDTO;
 		
-	} //getselectall
+	} //getSelectOne 메서드 
 	
 	public ArrayList<EmpDTO> getSelectAll() { //최신입사일순으로 
 		Connection con = null;

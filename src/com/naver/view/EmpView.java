@@ -16,9 +16,6 @@ public class EmpView { //emp 테이블만 출력한다.
 		System.out.println("comm:"+empDTO.getComm());
 		System.out.println("deptno:"+empDTO.getDeptno());
 		
-		//for(EmpDTO empDTO:ar) {
-			//this.view(empDTO);
-		//}
 
 	}
 	
@@ -35,6 +32,9 @@ public class EmpView { //emp 테이블만 출력한다.
 			System.out.println("=================================");
 			
 		}
+		//for(EmpDTO empDTO:ar) {
+		//this.view(empDTO);
+		//}
 		
 		
 	}
