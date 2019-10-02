@@ -21,7 +21,7 @@ public class DeptDAO {
 			con=DBConnector.getConnect();
 			String sql = "select * from dept where deptno=? ";
 			st=con.prepareStatement(sql);
-			st.setInt(1, deptno);
+			st.setInt(1, deptno); //sql에 ?가 없으면 위에서 sql보내고 끝
 			rs = st.executeQuery();
 			
 			if(rs.next()) {
