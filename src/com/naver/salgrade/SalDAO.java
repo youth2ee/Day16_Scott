@@ -28,7 +28,6 @@ public class SalDAO {
 
 	ResultSet rs = null;
 
-	DBConnector db = new DBConnector();
 
 
 
@@ -38,7 +37,8 @@ public class SalDAO {
 
 		try {
 
-			con = db.getConnect();
+			con = DBConnector.getConnect();
+			
 
 			con.setAutoCommit(false); // 오토커밋해제
 
@@ -90,7 +90,7 @@ public class SalDAO {
 
 		try {
 
-			con = db.getConnect();
+			con = DBConnector.getConnect();
 
 			String sql = "insert into salgrade values (?,?,?)";
 
@@ -114,6 +114,7 @@ public class SalDAO {
 
 			try {
 
+				rs.close();
 
 				st.close();
 
@@ -137,13 +138,13 @@ public class SalDAO {
 
 	public List<SalDTO> getSelectList() {
 
-		List<SalDTO> ar = null;
+		ArrayList<SalDTO> ar = new ArrayList<SalDTO>();
 
 		SalDTO salDTO = null;
 
 		try {
 
-			con = db.getConnect();
+			con = DBConnector.getConnect();
 
 			String sql = "select * from salgrade";
 
@@ -209,7 +210,7 @@ public class SalDAO {
 
 		try {
 
-			con = db.getConnect();
+			con = DBConnector.getConnect();
 
 			String sql = "select * from salgrade where grade = ?";
 
