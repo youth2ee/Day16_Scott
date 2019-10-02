@@ -34,7 +34,8 @@ public class EmpController {
 			System.out.println("2. 사원검색출력");
 			System.out.println("3. 사원정보추가");
 			System.out.println("4. 사원정보삭제");
-			System.out.println("5. 종료");
+			System.out.println("5. 사원정보수정");
+			System.out.println("6. 종료");
 			int num = sc.nextInt();
 			
 			
@@ -84,6 +85,7 @@ public class EmpController {
 				empView.view(s);
 				
 				break;
+				
 				
 			default :
 				check=!check;
