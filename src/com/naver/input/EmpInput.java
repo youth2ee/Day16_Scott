@@ -1,6 +1,9 @@
 package com.naver.input;
 
+import java.sql.Date;
 import java.util.Scanner;
+
+import com.naver.emp.EmpDTO;
 
 public class EmpInput {
 	//입력전문
@@ -18,6 +21,28 @@ public class EmpInput {
 		int empno = sc.nextInt();
 		
 		return empno;
+		
+	}
+	
+	public EmpDTO insert() {
+		EmpDTO empDTO = new EmpDTO();
+		
+		System.out.println("사원번호 입력");
+		empDTO.setEmpno(sc.nextInt());
+		System.out.println("사원이름 입력");
+		empDTO.setEname(sc.next().toUpperCase());
+		System.out.println("사원직업 입력");
+		empDTO.setJob(sc.next().toUpperCase());
+		System.out.println("관리자번호 입력");
+		empDTO.setMgr(sc.nextInt());
+		System.out.println("월급 입력");
+		empDTO.setSal(sc.nextInt());
+		System.out.println("커미션 입력");
+		empDTO.setComm(sc.nextInt());
+		System.out.println("부서번호 입력");
+		empDTO.setDeptno(sc.nextInt());
+		
+		return empDTO;
 		
 	}
 

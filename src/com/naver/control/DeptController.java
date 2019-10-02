@@ -30,7 +30,8 @@ public class DeptController {
 		while(check) {
 			System.out.println("1. 부서별 전체출력");
 			System.out.println("2. 부서별 출력");
-			System.out.println("3. 종료");
+			System.out.println("3. 부서정보추가");
+			System.out.println("4. 종료");
 			int num = sc.nextInt();
 
 
@@ -54,6 +55,19 @@ public class DeptController {
 				} else {
 					deptView.view("없는 부서번호 입니다.");
 				}
+
+				break;
+
+			case 3:
+				DeptDTO deptDTO = deptInput.insert();
+				int result = deptDAO.deptInsert(deptDTO);
+				String s = "추가 실패";
+
+				if(result>0) {
+					s = "추가 성공";
+					deptView.view(deptDTO);					
+				} 
+				deptView.view(s);
 
 				break;
 

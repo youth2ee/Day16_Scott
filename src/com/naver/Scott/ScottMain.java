@@ -19,9 +19,9 @@ public class ScottMain {
 
 	public static void main(String[] args) {
 
-		EmpDAO empDAO = new EmpDAO();
-		EmpInput empInput = new EmpInput();
-		EmpView empView = new EmpView();
+		//EmpDAO empDAO = new EmpDAO();
+		//EmpInput empInput = new EmpInput();
+		//EmpView empView = new EmpView();
 		
 		//1. 한명출력
 		//int empno = empInput.empnoInput(); //사원번호 받기
@@ -59,6 +59,19 @@ public class ScottMain {
 		FrontController fc = new FrontController();
 		fc.start();
 		
+		/*
+		DeptDAO deptDAO = new DeptDAO();
+		DeptDTO deptDTO = new DeptDTO();
+		deptDTO.setDeptno(12);
+		deptDTO.setDname("BOOK");
+		deptDTO.setLoc("PAJU");
+		int result = deptDAO.deptInsert(deptDTO);
+		if(result>0) {
+			System.out.println("추가 성공");
+		}else {
+			System.out.println("추가 실패");
+		}
+		*/
 		
 		
 		

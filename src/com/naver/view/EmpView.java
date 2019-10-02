@@ -6,6 +6,10 @@ import com.naver.emp.EmpDTO;
 
 public class EmpView { //emp 테이블만 출력한다.
 	
+	public void view(String str) {
+		System.out.println(str);
+	}
+	
 	public void view(EmpDTO empDTO) {
 		System.out.println("empno:"+empDTO.getEmpno());
 		System.out.println("ename:"+empDTO.getEname());

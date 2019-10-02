@@ -9,6 +9,54 @@ import java.util.ArrayList;
 import com.naver.util.DBConnector;
 
 public class EmpDAO {
+	
+	public int empInsert(EmpDTO empDTO) {
+		Connection con = null;
+		PreparedStatement st = null;
+		int result =0;
+		
+		try {
+			con=DBConnector.getConnect();
+			String sql = "insert into emp values(?,?,?,?,sysdate,?,?,?)";
+			st=con.prepareStatement(sql);
+			
+			st.setInt(1, empDTO.getEmpno());
+			st.setString(2, empDTO.getEname());
+			st.setString(3, empDTO.getJob());
+			st.setInt(4, empDTO.getMgr());
+			//sysdate 현재시간
+			st.setInt(5, empDTO.getSal());
+			st.setInt(6, empDTO.getComm());
+			st.setInt(7, empDTO.getDeptno());
+			
+			result = st.executeUpdate();
+			
+			if(result>0) {
+				System.out.println("입력성공");
+			}else {
+				System.out.println("입력실패");
+			}
+				
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				st.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		
+		return result;
+		
+		
+	}
+	
+	
 
 	public EmpDTO getSelectOne(int empno) { //매개변수 사원번호 //출력은 view //
 		Connection con = null;

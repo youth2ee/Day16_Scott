@@ -12,12 +12,45 @@ import com.naver.util.DBConnector;
 
 public class DeptDAO {
 	
-	public void deptInsert(DeptDTO deptDTO) {
+	
+	public int deptInsert(DeptDTO deptDTO) {
 		Connection con = null;
 		PreparedStatement st = null;
+		int result =0;
 		
-		con.DBC
+		try {
+			con=DBConnector.getConnect();
+			String sql = "insert into DEPT values(?,?,?)";
+			st=con.prepareStatement(sql);
+			
+			st.setInt(1, deptDTO.getDeptno());
+			st.setString(2, deptDTO.getDname());
+			st.setString(3, deptDTO.getLoc());
+			
+			result = st.executeUpdate();
+			
+			if(result>0) {
+				System.out.println("입력성공");
+			}else {
+				System.out.println("입력실패");
+			}
+				
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				st.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
 		
+		return result;
+
 		
 		
 	}

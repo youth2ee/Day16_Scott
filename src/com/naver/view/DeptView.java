@@ -10,16 +10,15 @@ public class DeptView {
 
 	public void view(String str) {
 		System.out.println(str);
-		
-	}
+	} //view(String) 끝
 	
 	
 	public void view(DeptDTO deptDTO) {
+		System.out.println("==================");
 		System.out.println("DeptNo:"+deptDTO.getDeptno());
 		System.out.println("Dname:"+deptDTO.getDname());
 		System.out.println("Loc:"+deptDTO.getLoc());
-		System.out.println("==================");
-	}
+	}//view(DeptDTO) 끝
 	
 	
 
@@ -38,8 +37,7 @@ public class DeptView {
 			System.out.println("===================");
 		}
 		*/
-		
-	}
+	}//view(List) 끝
 
 	
 	
