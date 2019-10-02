@@ -37,7 +37,7 @@ public class BonusController {
 			switch(num) {
 			case 1:
 				List<BonusDTO> ar = bonusDAO.getSelectAll();
-				if(ar.size()>0) {
+				if(ar.size()!=0) {
 					bonusView.view(ar);
 				} else {
 					System.out.println("데이터가 없습니다.");

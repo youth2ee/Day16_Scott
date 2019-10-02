@@ -54,7 +54,8 @@ public class BonusDAO {
 		ResultSet rs =null;
 		BonusDTO bonusDTO = null;
 
-		List<BonusDTO> ar=null;
+		ArrayList<BonusDTO> ar = new ArrayList<BonusDTO>();
+		
 
 		try {
 			con=DBConnector.getConnect();
