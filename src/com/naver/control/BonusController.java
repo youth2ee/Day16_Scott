@@ -35,7 +35,7 @@ public class BonusController {
 			case 1:
 				List<BonusDTO> ar = bonusDAO.getSelectAll();
 				if(ar.size()>0) {
-					empView.view(ar);
+					bonusView.view(ar);
 				} else {
 					System.out.println("데이터가 없습니다.");
 				}
@@ -76,12 +76,8 @@ public class BonusController {
 
 			default:
 				check=!check;
-			}
-		}
-
-
-
-
-	}
+			}//switch문 끝
+		}//while문 끝
+	}//start 메서드 끝
 
 }
