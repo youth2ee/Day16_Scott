@@ -1,11 +1,14 @@
 package com.naver.control;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.naver.bonus.BonusDAO;
 import com.naver.bonus.BonusDTO;
+import com.naver.input.BonusInput;
 import com.naver.input.DeptInput;
+import com.naver.view.BonusView;
 
 public class BonusController {
 	private Scanner sc;
@@ -42,35 +45,36 @@ public class BonusController {
 				break;
 
 			case 2:
-				String ename = DeptInput.enameInput;
+				String ename = bonusInput.enameInput();
 				BonusDTO bonusDTO = bonusDAO.getSelectOne(ename);
 				if(bonusDTO!=null) {
 					bonusView.view(bonusDTO);
 				} else {
-					bonusView.view("없는 이름입니다.");
+					//bonusView.view("없는 이름입니다.");
 				}
 				break;
 
 			case 3:
-				BonusDTO bonusDTO2 = bonusInput.bonusInsert();
+				BonusDTO bonusDTO2 = bonusInput.salInsert();
 				int result = bonusDAO.insert(bonusDTO2);
-				String s = "추가실패";
 
 				if(result>0) {
-					s = "추가성공";
-					bonusView.view(bonusDTO);
+					System.out.println("추가성공");
+					bonusView.view(bonusDTO2);
+				} else {
+					System.out.println("추가실패");
 				}
-				bonusView.view(s);
 				break;
 
 			case 4:
 				ename = bonusInput.enameInput();
 				result = bonusDAO.delete(ename);
-				s="삭제실패";
+
 				if(result>0) {
-					s="삭제성공";
+					System.out.println("삭제성공");
+				} else {
+					System.out.println("삭제실패");
 				}
-				bonusView.view(s);
 
 				break;
 
