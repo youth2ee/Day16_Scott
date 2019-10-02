@@ -17,11 +17,7 @@ public class EmpController {
 	}
 
 	public void start() { //실행되면
-		/*
-		 * 1. 사원전체정보
-		 * 2. 사원검색출력
-		 * 3. 종료
-		 */
+
 		EmpDAO empDAO = new EmpDAO();
 		EmpInput empInput = new EmpInput();
 		EmpView empView = new EmpView();
@@ -31,13 +27,12 @@ public class EmpController {
 		boolean check = true;
 		while(check) {
 			System.out.println("1. 사원전체정보");
-			System.out.println("2. 사원검색출력");
+			System.out.println("2. 사원번호로 검색");
 			System.out.println("3. 사원정보추가");
 			System.out.println("4. 사원정보삭제");
-			System.out.println("5. 사원정보수정");
+			System.out.println("5. 사원이름으로 검색");
 			System.out.println("6. 종료");
 			int num = sc.nextInt();
-			
 			
 			
 			switch(num){
@@ -85,6 +80,15 @@ public class EmpController {
 				empView.view(s);
 				
 				break;
+				
+			case 5:
+				String str = empInput.enameInput();
+				ar = empDAO.search(str);
+				if(ar.size() !=0) {
+					empView.view(ar);
+				} else {
+					break;
+				}
 				
 				
 			default :

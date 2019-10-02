@@ -50,6 +50,7 @@ public class BonusController {
 				if(bonusDTO!=null) {
 					bonusView.view(bonusDTO);
 				} else {
+					System.out.println("없는 이름입니다.");
 					//bonusView.view("없는 이름입니다.");
 				}
 				break;

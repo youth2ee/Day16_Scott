@@ -22,15 +22,12 @@ import com.naver.util.DBConnector;
 
 public class SalDAO {
 
-	Connection con = null;
-
-	PreparedStatement st = null;
-
-	ResultSet rs = null;
-
-
 
 	public int delete(int grade) {
+		Connection con = null;
+
+		PreparedStatement st = null;
+
 
 		int result = 0;
 
@@ -58,7 +55,7 @@ public class SalDAO {
 
 			try {
 
-				rs.close();
+	
 
 				st.close();
 
@@ -83,6 +80,11 @@ public class SalDAO {
 
 
 	public int insert(SalDTO salDTO) {
+		Connection con = null;
+
+		PreparedStatement st = null;
+
+	
 
 		int result = 0;
 
@@ -133,6 +135,11 @@ public class SalDAO {
 
 
 	public List<SalDTO> getSelectList() {
+		Connection con = null;
+
+		PreparedStatement st = null;
+
+		ResultSet rs = null;
 
 		ArrayList<SalDTO> ar = new ArrayList<SalDTO>();
 
@@ -199,10 +206,15 @@ public class SalDAO {
 
 
 	public SalDTO getSelectOne(int grade) {
+		Connection con = null;
+
+		PreparedStatement st = null;
+
+		ResultSet rs = null;
 
 
 
-		SalDTO salDTO = new SalDTO();
+		SalDTO salDTO = null;
 
 		try {
 

@@ -7,11 +7,20 @@ import com.naver.emp.EmpDTO;
 
 public class EmpInput {
 	//입력전문
-	
 	private Scanner sc; 
+
 	
 	public EmpInput() {
 	sc = new Scanner(System.in);
+	}
+	
+	public String enameInput() {
+		//한글자 받아서 찾기
+		System.out.println("찾으려는 글자를 입력하세요");
+		String str = sc.next().toUpperCase();
+		
+		return str;
+		
 	}
 	
 	public int empnoInput() {

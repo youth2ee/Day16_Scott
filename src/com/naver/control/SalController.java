@@ -52,11 +52,11 @@ public class SalController {
 			case 2:
 				select = salInput.gradeInput();
 				salDTO = salDAO.getSelectOne(select);
-				if (salDTO != null)
+				if (salDTO != null) {
 					salView.view(salDTO);
-				else
+				}else {
 					salView.view("찾으시는 정보가 없습니다.");
-				
+				}
 				break;
 
 			case 3:
