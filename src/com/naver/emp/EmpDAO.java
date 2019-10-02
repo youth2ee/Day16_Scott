@@ -6,9 +6,38 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import com.naver.dept.DeptDTO;
 import com.naver.util.DBConnector;
 
 public class EmpDAO {
+	
+	
+	public int delete(int empno) {
+		Connection con = null;
+		PreparedStatement st = null;
+		int result = 0;
+		
+		try {
+			con=DBConnector.getConnect();
+			String sql = "delete emp where empno=?";
+			st=con.prepareStatement(sql);
+			
+			st.setInt(1, empno);
+			
+			result = st.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				st.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	
 	
 	public int empInsert(EmpDTO empDTO) {
 		Connection con = null;
@@ -38,21 +67,18 @@ public class EmpDAO {
 			}
 				
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {
 				st.close();
 				con.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
 		}
 		
 		return result;
-		
 		
 	}
 	

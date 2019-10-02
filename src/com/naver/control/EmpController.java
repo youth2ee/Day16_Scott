@@ -33,7 +33,8 @@ public class EmpController {
 			System.out.println("1. 사원전체정보");
 			System.out.println("2. 사원검색출력");
 			System.out.println("3. 사원정보추가");
-			System.out.println("4. 종료");
+			System.out.println("4. 사원정보삭제");
+			System.out.println("5. 종료");
 			int num = sc.nextInt();
 			
 			
@@ -72,6 +73,17 @@ public class EmpController {
 				empView.view(s);
 				
 				break;	
+				
+			case 4:
+				empno = empInput.empnoInput();
+				result = empDAO.delete(empno);
+				s = "삭제 실패";
+				if(result>0) {
+					s="삭제성공";
+				}
+				empView.view(s);
+				
+				break;
 				
 			default :
 				check=!check;
