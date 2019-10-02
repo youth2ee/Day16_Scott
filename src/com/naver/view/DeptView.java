@@ -1,22 +1,35 @@
 package com.naver.view;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.naver.dept.DeptDTO;
 import com.naver.emp.EmpDTO;
 
 public class DeptView {
 
-	public void view(DeptDTO deptDTO) {
+	public void view(String str) {
+		System.out.println(str);
 		
-		System.out.println("deptno:"+deptDTO.getDeptno());
-		System.out.println("dname:"+deptDTO.getDname());
-		System.out.println("loc:"+deptDTO.getLoc());
-		System.out.println("==================");
-		 
 	}
+	
+	
+	public void view(DeptDTO deptDTO) {
+		System.out.println("DeptNo:"+deptDTO.getDeptno());
+		System.out.println("Dname:"+deptDTO.getDname());
+		System.out.println("Loc:"+deptDTO.getLoc());
+		System.out.println("==================");
+	}
+	
+	
 
-	public void view(ArrayList<DeptDTO> ar) {
+	//public void view(ArrayList<DeptDTO> ar) {
+	public void view(List<DeptDTO> ar) {
+		
+		for(DeptDTO nDept : ar) {
+			this.view(nDept);
+		}
+			
 		/*
 		for(int i=0;i<ar.size();i++) {
 			System.out.println(ar.get(i).getDeptno());
@@ -26,10 +39,8 @@ public class DeptView {
 		}
 		*/
 		
-		for(DeptDTO nDept : ar) {
-			this.view(nDept);
-		}
-
 	}
 
+	
+	
 }

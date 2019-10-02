@@ -2,10 +2,13 @@ package com.naver.Scott;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.naver.control.DeptController;
 import com.naver.control.EmpController;
+import com.naver.control.FrontController;
 import com.naver.dept.DeptDAO;
+import com.naver.dept.DeptDTO;
 import com.naver.emp.EmpDAO;
 import com.naver.emp.EmpDTO;
 import com.naver.input.EmpInput;
@@ -37,9 +40,24 @@ public class ScottMain {
 		//ec.start();
 		
 		//------------
+		//DeptDAO dao = new DeptDAO();
+		//List<DeptDTO> ar = dao.getSelectAll();
+		//list를 쓰는 이유 : 분업하기 위해서 필요. 
+		//DeptDTO만드는애가 어떤 list쓸지 모르므로
+		//list들의 부모형인  부모형클래스 List로 받는다. 
+		//받기만 list로 받아도 된다.??
 		
-		DeptController dc = new DeptController();
-		dc.start();
+		
+		//for(int i=0;i<ar.size();i++) {
+		//	DeptDTO deptDTO = ar.get(i);
+		//}
+		
+		
+		//DeptController dc = new DeptController();
+		//dc.start();
+		
+		FrontController fc = new FrontController();
+		fc.start();
 		
 		
 		
