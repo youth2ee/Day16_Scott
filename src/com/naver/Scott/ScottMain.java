@@ -59,22 +59,6 @@ public class ScottMain {
 		FrontController fc = new FrontController();
 		fc.start();
 		
-		/*
-		DeptDAO deptDAO = new DeptDAO();
-		DeptDTO deptDTO = new DeptDTO();
-		deptDTO.setDeptno(12);
-		deptDTO.setDname("BOOK");
-		deptDTO.setLoc("PAJU");
-		int result = deptDAO.deptInsert(deptDTO);
-		if(result>0) {
-			System.out.println("추가 성공");
-		}else {
-			System.out.println("추가 실패");
-		}
-		*/
-		
-		
-		
 		
 	}
 }

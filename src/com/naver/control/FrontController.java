@@ -12,7 +12,6 @@ public class FrontController {
 	
 	
 	public FrontController() {
-		// TODO Auto-generated constructor stub
 		sc = new Scanner(System.in);
 		empController = new EmpController();
 		deptController = new DeptController();

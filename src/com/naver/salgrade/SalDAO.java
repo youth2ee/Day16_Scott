@@ -30,15 +30,13 @@ public class SalDAO {
 
 
 
-
 	public int delete(int grade) {
 
 		int result = 0;
 
 		try {
 
-			con = DBConnector.getConnect();
-			
+			con=DBConnector.getConnect();
 
 			con.setAutoCommit(false); // 오토커밋해제
 
@@ -90,7 +88,7 @@ public class SalDAO {
 
 		try {
 
-			con = DBConnector.getConnect();
+			con=DBConnector.getConnect();
 
 			String sql = "insert into salgrade values (?,?,?)";
 
@@ -113,8 +111,6 @@ public class SalDAO {
 		} finally {
 
 			try {
-
-				rs.close();
 
 				st.close();
 
@@ -144,7 +140,7 @@ public class SalDAO {
 
 		try {
 
-			con = DBConnector.getConnect();
+			con=DBConnector.getConnect();
 
 			String sql = "select * from salgrade";
 
@@ -210,7 +206,7 @@ public class SalDAO {
 
 		try {
 
-			con = DBConnector.getConnect();
+			con=DBConnector.getConnect();
 
 			String sql = "select * from salgrade where grade = ?";
 
