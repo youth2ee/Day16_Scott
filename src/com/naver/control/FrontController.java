@@ -3,7 +3,6 @@ package com.naver.control;
 import java.util.Scanner;
 
 public class FrontController {
-	
 	private Scanner sc;
 	private EmpController empController;
 	private DeptController deptController;
