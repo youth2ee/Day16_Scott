@@ -72,7 +72,8 @@ public class SalController {
 			case 4:
 				select = salInput.gradeInput();
 				select = salDAO.delete(select);
-				if (select == 1)
+				//if (select == 1)
+				if (select > 0)
 					System.out.println("삭제 완료");
 				else
 					System.out.println("삭제 실패");

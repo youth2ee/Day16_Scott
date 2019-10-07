@@ -1,13 +1,11 @@
 package com.naver.control;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import com.naver.bonus.BonusDAO;
 import com.naver.bonus.BonusDTO;
 import com.naver.input.BonusInput;
-import com.naver.input.DeptInput;
 import com.naver.view.BonusView;
 
 public class BonusController {
@@ -76,7 +74,6 @@ public class BonusController {
 				} else {
 					System.out.println("삭제실패");
 				}
-
 				break;
 
 			default:
