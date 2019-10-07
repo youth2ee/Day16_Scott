@@ -150,5 +150,32 @@ select * from emp, dept
 select count(empno) from emp
 select count(deptno) from dept
 
+-- oracle에서만 사용하는 전용 join문구
 select * from emp, dept
 where emp.deptno = dept.deptno
+
+-- 표준 : ANSI join (오라클과 mysql에서 사용가능)
+SELECT EMPNO,JOB,DNAME,LOC
+FROM EMP E inner join DEPT D
+ON E.DEPTNO = D.DEPTNO
+
+SELECT E.DEPTNO
+FROM EMP E inner join DEPT D
+ON E.DEPTNO = D.DEPTNO
+-- DEPTNO는 EMP테이블과 DEPT테이블에 모두 존재하므로 어디테이블의 컬럼인지 써줘야한다.
+
+SELECT *
+FROM EMP inner join DEPT
+USING (DEPTNO)
+
+-- 사원번호, 사원이름, 상사의 사원번호, 상사의 이름
+select e1.empno, e1.ename, e1.mgr, e2.empno, e2.ename 
+from emp e1 inner join emp e2
+on e1.mgr = e2.empno
+-- inner join은 null값을 제외한다. -> outer은 null을 포함하여 가져온다.
+
+-- LEFT 테이블에 NULL이 있다 : LEFT OUTER JOIN
+select e1.empno, e1.ename, e1.mgr, e2.empno, e2.ename 
+from emp e1 FULL OUTER join emp e2
+on e1.mgr = e2.empno
+
